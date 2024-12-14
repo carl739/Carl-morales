@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellphone Shop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo h1 {
+            color: #ffe600;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffe600;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 50px;
+            
+            color: #fff;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+        }
+
+        .products {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .products h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffe600;
+        }
+
+        .product-card {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            padding: 10px 20px;
+            border: none;
+            background: #ffe600;
+            color: #333;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .product-card button:hover {
+            background: #ffd700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .product-card {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Phone Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="D:\Finals\product\products.html">Products</a></li>
+                <li><a href="D:\Finals\About\adw.html">About Us</a></li>
+                <li><a href="D:\Finals\contact\Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h2>Welcome to Bossing Phone Store</h2>
+        <p>Explore our wide selection of the latest smartphones!</p>
+    </section>
+
+    <section class="products">
+        <h2>Our Best Sellers</h2>
+        <div class="product-card">
+            <img src="https://powermaccenter.com/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-WW.jpg?v=1726238735&width=1445 " alt="Phone 1"> 
+            <h3>Iphone</h3>
+            <p>PHP 20,000</p>
+            <button onclick="addToCart('Phone Model 1')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/ph/2202/gallery/ph-galaxy-a53-5g-a536-sm-a536elbgphl-531486604?$650_519_PNG$" alt="Phone 2">
+            <h3>Samsung</h3>
+            <p>PHP 18,799</p>
+            <button onclick="addToCart('Phone Model 2')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1728541799076/a29864bdf5c1ef414281b5c7a1c09a58.png" alt="Phone 3">
+            <h3>Vivo</h3>
+            <p>PHP 15,899</p>
+            <button onclick="addToCart('Phone Model 3')">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bossing Phone Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(productName) {
+            alert(productName + " has been added to your cart!");
+        }
+    </script>
+</body>
+</html

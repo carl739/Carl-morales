@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellphone Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 0.5rem 1rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 1rem;
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .card-price {
+            font-size: 1.1rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        .card-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .card-button:hover {
+            background-color: #45a049;
+        }
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="D:\Finals\finals\finals.html">Home</a></li>
+            <li><a href="D:\Finals\product\products.html">Products</a></li>
+            <li><a href="D:\Finals\About\adw.html">About Us</a></li>
+            <li><a href="D:\Finals\contact\Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Welcome to Our Online Cellphone Store</h1>
+    </header>
+    <div class="container" id="product-container">
+    </div>
+
+    <div class="cart" id="cart">
+        Cart: 0 items
+    </div>
+
+    <script>
+        const products = [
+            { title: "iPhone 16 ProMax", price: "PHP 50,000", image: "https://powermaccenter.com/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-WW.jpg?v=1726238735&width=823/300x200" },
+            { title: "Samsung Galaxy S23", price: "PHP 20,799", image: "https://images.samsung.com/ph/smartphones/galaxy-s23/images/galaxy-s23-highlights-color-back-lavender.jpg?imbypass=true/300x200" },
+            { title: "infinix note 40 pro", price: "PHP 15,599", image: "https://www.kimstore.com/cdn/shop/files/ginee_20240509161556167_8000722043.png?v=1733971017&width=600/300x200" },
+            { title: "OnePlus 11", price: "PHP 10,699", image: "https://oasis.opstatics.com/content/dam/oasis/page/2023/na/oneplus-11/specs/green-img.png" },
+            { title: "Xiaomi Mi 13", price: "PHP 16,599", image: "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1677427681.17943185.png0" },
+            { title: "realme note 50", price: "PHP 15,199", image: "https://fdn2.gsmarena.com/vv/bigpic/realme-note-50.jpg" },
+            { title: "Huawei P60 Pro", price: "PHP 20,899", image: "https://cms.shoppingmall.ph/images/items/item-1-638567245182878656-4hswuc.jpeg" },
+            { title: "Oppo Find X5 Pro", price: "PHP 25,999", image: "https://m.media-amazon.com/images/I/61riTWhix3L._AC_SL1200_.jpg" },
+            { title: "Realme GT 3", price: "PHP 24,549", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkuc7aEFrM8FoqPqfH0udMyMxCV9X2MClBXA&s" },
+            { title: "Motorola Edge 30", price: "PHP 15,599", image: "https://fdn2.gsmarena.com/vv/bigpic/motorola-edge-30-.jpg" },
+            { title: "Asus ROG Phone 7", price: "PHP 71,299", image: "https://dlcdnwebimgs.asus.com/gain/24D0E21F-90B8-47EB-9F5B-AD6D1458D959" },
+            { title: "Vivo X90 Pro", price: "PHP 27,799", image: "https://images-cdn.ubuy.co.in/64e61afe248576654c7ae113-vivo-x90-pro-smartphone-legendary-black.jpg" }
+        ];
+
+        const container = document.getElementById('product-container');
+        const cart = document.getElementById('cart');
+        let cartCount = 0;
+
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <div class="card-body">
+                    <h2 class="card-title">${product.title}</h2>
+                    <p class="card-price">${product.price}</p>
+                    <button class="card-button">Add to Cart (0)</button>
+                </div>
+            `;
+
+            const button = card.querySelector('.card-button');
+            let productCount = 0;
+
+            button.addEventListener('click', () => {
+                productCount++;
+                cartCount++;
+                button.textContent = `Add to Cart (${productCount})`;
+                cart.textContent = `Cart: ${cartCount} items`;
+            });
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
+

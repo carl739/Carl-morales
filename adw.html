@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellphone Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('https://img.freepik.com/free-vector/background-abstract-pixel-rain_23-2148376182.jpg') no-repeat center center/cover;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li:hover {
+            transform: translateY(-5px);
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffe600;
+            color: #333;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .about-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffe600;
+        }
+
+        .about-container p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
+        .about-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about-container {
+                padding: 20px;
+            }
+
+            .about-container h1 {
+                font-size: 2rem;
+            }
+
+            .about-container p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="D:\Finals\finals\Finals.html">Home</a></li>
+        <li><a href="D:\Finals\product\products.html">Products</a></li>
+        <li><a href="D:\Finals\About\adw.html">About Us</a></li>
+        <li><a href="D:\Finals\contact\Contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="about-container">
+    <h1>About Us</h1>
+    <p>Welcome to <strong>Bossing Cellphone</strong>, your trusted destination for the latest and greatest in mobile technology. Our store is dedicated to providing top-quality cellphones, accessories, and unparalleled customer service.</p>
+    <p>With a wide range of brands and models, we aim to help you stay connected and ahead of the curve. Whether you're looking for the latest smartphone or reliable accessories, we've got you covered!</p>
+    <p>Visit us and experience the perfect blend of technology and convenience.</p>
+   
+</div>
+
+</body>
+</html>
